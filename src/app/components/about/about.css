@@ -1,0 +1,27 @@
+.about-section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    padding: 4%;
+    line-height: 2em;
+}
+
+.about-us{
+    padding-bottom: 30px;
+    font-size: 3em;
+    text-align: left;
+    border-bottom: 5px solid var(--main-pink);
+}
+
+.section1{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px;
+}
+
+.kiryu{
+    width: 90%;
+    margin-left: auto;
+    border-radius: 10px;
+}
