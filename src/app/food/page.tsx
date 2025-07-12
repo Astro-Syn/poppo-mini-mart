@@ -32,29 +32,28 @@ useEffect(() => {
       <div className="display">
         {foods.map((food) => {
           const cartItem = cart.find((item) => item.id === food.id)
-        
-
+    
           return(
-              <div key={food.id} className='display-items'>
+                <div key={food.id} className='display-items'>
                 <img src={food.image} alt={food.title} width={200} />
                 <h2>{food.title}</h2>
                 <p>{food.price}¥</p>
                 <p>{food.description}</p>
-          )
+          
           
 
               {cartItem ? (
                 <div>
                   <button
                   className="btn-style"
-                  onClick={() => updateQuantity(food.id, cartItem.quantity -1)}
+                  onClick={() => updateQuantity(food.id, cartItem.quantity -1, 'food')}
                   >
                     -
                   </button>
                   <span>{cartItem.quantity}</span>
                   <button
                   className='btn-style'
-                  onClick={() => updateQuantity(food)}
+                  onClick={() => updateQuantity(food.id, cartItem.quantity +1, 'food')}
                   >
                     +
                   </button>
@@ -62,7 +61,7 @@ useEffect(() => {
               ) : (
                 <button
                 className='btn-style'
-                onClick={() => addToCart({...food, quantity: 1})}
+                onClick={() => addToCart({...food, quantity: 1, category: 'food'})}
                 >
                   Add to Cart
                 </button>

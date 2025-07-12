@@ -22,12 +22,12 @@ export default function CheckoutPage() {
               <h3>{item.title}</h3>
               <p>Price: {item.price}¥</p>
               <div>
-                <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
+                <button onClick={() => updateQuantity(item.id, item.quantity - 1, item.category)}>-</button>
                 <span style={{ margin: '0 8px' }}>{item.quantity}</span>
-                <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+                <button onClick={() => updateQuantity(item.id, item.quantity + 1, item.category)}>+</button>
               </div>
               <p>Subtotal: {(item.price * item.quantity)}¥</p>
-              <button onClick={() => removeFromCart(item.id)}>Remove</button>
+              <button onClick={() => removeFromCart(item.id, item.category)}>Remove</button>
             </div>
           ))}
           <h2>Total: {getTotal()}¥</h2>
