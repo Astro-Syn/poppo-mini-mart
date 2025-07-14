@@ -2,6 +2,7 @@
 import { useState, useEffect} from 'react';
 import { useCart } from '../context/CartContext';
 import "../styles/MenuItems.css";
+import "../food/Food.css";
 
 type Foods = {
     id: number;
@@ -14,7 +15,8 @@ type Foods = {
 
 export default function Food(){
     const [foods, setFoods] = useState<Foods[]>([]);
-   
+    const [visibleCount, setVisibleCount] = useState(10);
+
     const {cart, addToCart, updateQuantity }= useCart();
 
 
@@ -30,8 +32,8 @@ useEffect(() => {
     <div>
       <h1 className="title">Food</h1>
       <div className="display">
-        {foods.map((food) => {
-          const cartItem = cart.find((item) => item.id === food.id)
+        {foods.slice(0, visibleCount).map((food) => {
+          const cartItem = cart.find((item) => item.id === food.id && item.category === 'food')
     
           return(
                 <div key={food.id} className='display-items'>
@@ -39,8 +41,8 @@ useEffect(() => {
                 <h2>{food.title}</h2>
                 <p>{food.price}¥</p>
                 <p>{food.description}</p>
-          
-          
+
+             
 
               {cartItem ? (
                 <div>
@@ -67,9 +69,24 @@ useEffect(() => {
                 </button>
               )}
           </div>
+
+          
         );
       })}
       </div>
+            
+
+       {/*Load more button */}
+              {visibleCount < foods.length && (
+                <div>
+                  <button 
+                  className='load-more-btn'
+                  onClick={() => setVisibleCount(prev => prev + 20)}
+                  >
+                    Load more
+                  </button>
+                </div>
+              )}
     </div>
     );
 }

@@ -1,0 +1,102 @@
+.title{
+    font-size: 2.5em;
+    text-align: center;
+    border-bottom: 4px solid var(--main-pink);
+    
+}
+.layout-container{
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.container{
+    margin: 4%;
+    padding: 15px;
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border: 2px solid gray;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.container2 > div {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border: 1px solid lightgray;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.container2 img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+
+.quantity-subtotal-remove{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 10px;    
+}
+
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-weight: 600;
+    font-size: 1.5em;
+    border-top: 2px solid var(--main-pink);
+    width: 35%;
+    border: 2px solid gray;
+    margin: 4%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.quantity{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px;
+    border-bottom: 2px solid var(--main-pink);
+    padding: 10px;
+}
+
+
+button{
+    border: 1px solid pink;
+    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(rgb(255, 176, 204), var(--main-pink));
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(239, 252, 255);
+    transition: background 0.3s ease-in, transform 0.1s ease-in;
+}
+
+button:hover{
+    background: linear-gradient(rgb(203, 42, 98), var(--main-pink));
+}
+
+button:active{
+    transform: translateY(1px);
+    background: linear-gradient(rgb(254, 189, 212), rgb(255, 119, 185));
+}
+

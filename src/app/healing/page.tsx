@@ -28,7 +28,7 @@ export default function Stimulants(){
             <h1 className='title'>Stimulants</h1>
             <div className="display">
               {stimulants.map((stimulant) => {
-                const cartItem = cart.find((item) => item.id === stimulant.id)
+                const cartItem = cart.find((item) => item.id === stimulant.id && item.category === 'stimulant')
 
               return (
                 <div key={stimulant.id} className='display-items'>

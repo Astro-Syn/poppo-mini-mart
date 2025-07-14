@@ -30,7 +30,7 @@ export default function Drinks(){
             <h1 className='title'>Drinks</h1>
             <div className='display'>
                 {drinks.map((drink) => {
-                    const cartItem = cart.find((item) => item.id === drink.id)
+                    const cartItem = cart.find((item) => item.id === drink.id && item.category === 'drink')
 
                     return (
                         <div key={drink.id} className="display-items">

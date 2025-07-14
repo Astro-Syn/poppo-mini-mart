@@ -1,5 +1,4 @@
 
-
 export default function Locations(){
     return(
         <div id="locations" className="py-16 bg-gray-50">

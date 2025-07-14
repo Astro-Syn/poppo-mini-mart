@@ -63,9 +63,18 @@ export const Navbar = () => {
             <Link href='/reviews' className="menu-item">Reviews</Link>
         </div>
             
-            <div className='cart'>
-                <Link href='/checkout' className="menu-item"><img src='/Images/shopping_cart.png' alt="Checkout"></img></Link>
-            </div>
+            
+           
+                <Link href='/checkout' className="cart">
+                
+                <img src='/Images/shopping_cart.png' alt="Checkout"></img>
+                <div className='orbit-wrapper'>
+                    <div className='circle'></div>
+                </div>
+                </Link>
+                
+                
+            
             
         </nav>
         </>
