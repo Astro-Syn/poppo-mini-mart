@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import "../styles/MenuItems.css";
+import { motion } from 'framer-motion';
 
 type Drinks = {
     id: number;
@@ -33,9 +34,14 @@ export default function Drinks(){
                     const cartItem = cart.find((item) => item.id === drink.id && item.category === 'drink')
 
                     return (
-                        <div key={drink.id} className="display-items">
+                        <motion.div key={drink.id} className="display-items"
+                        initial={{opacity: 0, y: 40}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.5}}
+                        
+                        >
                         <img src={drink.image} alt={drink.title} width={200} />
-                        <h2>{drink.title}</h2>
+                        <h2 className='product-name'>{drink.title}</h2>
                         <p>{drink.price}¥</p>
                         <p>{drink.description}</p>
 
@@ -63,7 +69,7 @@ export default function Drinks(){
                                 Add to Cart
                             </button>
                         )}
-                        </div>    
+                        </motion.div>    
                     );
                 })}
             </div>

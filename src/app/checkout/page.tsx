@@ -1,6 +1,7 @@
 'use client';
 import { useCart } from '../context/CartContext';
 import '../checkout/checkout.css';
+import { FaTrashAlt } from 'react-icons/fa';
 
 export default function CheckoutPage() {
   const { cart, updateQuantity, removeFromCart } = useCart();
@@ -27,7 +28,7 @@ export default function CheckoutPage() {
               alt={item.title} 
               width={100} 
               />
-              <h3>{item.title}</h3>
+              <h3>{item.title}-</h3>
               <p>Price: {item.price}¥</p>
               
                 {/*Right section of checkout items */}
@@ -46,7 +47,12 @@ export default function CheckoutPage() {
               
               
                     <p>Subtotal: {(item.price * item.quantity)}¥</p>
-                    <button onClick={() => removeFromCart(item.id, item.category)}>Remove</button>
+                    
+                    <div className='flex justify-center'>
+                      <FaTrashAlt className='trash-can cursor-pointer text-cyan-500 text-3xl flex justify-center hover:text-cyan-300 transition-colors duration-100' onClick={() => removeFromCart(item.id, item.category)} />
+                    </div>
+                    
+                    
                     </div>
             </div>
           ))}

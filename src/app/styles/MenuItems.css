@@ -8,7 +8,6 @@
     cursor: pointer;
     color: rgb(239, 252, 255);
     transition: background 0.3s ease-in, transform 0.1s ease-in;
-
 }
 
 .btn-style:hover{
@@ -27,7 +26,6 @@
     justify-content: center;
     width: 70%;
     margin: 0 auto;  
-    
 }
 
 .display-items{  
@@ -45,6 +43,16 @@
 .title{
     font-size: 2.5em;
     text-align: center;
+    justify-content: center;
+    background-color: rgb(221, 248, 255);
     border-bottom: 4px solid var(--main-pink);
-    
+}
+
+.product-name{
+    display: flex;
+    justify-content: center;
+    font-family: alumni sans;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 600;
 }

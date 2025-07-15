@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import "../styles/MenuItems.css";
+import { motion } from 'framer-motion';
 
 type Stimulants = {
     id: number;
@@ -31,9 +32,14 @@ export default function Stimulants(){
                 const cartItem = cart.find((item) => item.id === stimulant.id && item.category === 'stimulant')
 
               return (
-                <div key={stimulant.id} className='display-items'>
+                <motion.div key={stimulant.id}
+                className='display-items'
+                initial={{opacity: 0, y: 40}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.5}}
+                >
                 <img src={stimulant.image} alt={stimulant.title} width={200} />
-                <h2>{stimulant.title}</h2>
+                <h2 className='product-name'>{stimulant.title}</h2>
                 <p>{stimulant.price}¥</p>
                 <p>{stimulant.description}</p>
 
@@ -60,7 +66,7 @@ export default function Stimulants(){
               Add to Cart
             </button>
           )}
-        </div>
+        </motion.div>
         );
       })}
       </div>

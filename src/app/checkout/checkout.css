@@ -100,3 +100,6 @@ button:active{
     background: linear-gradient(rgb(254, 189, 212), rgb(255, 119, 185));
 }
 
+.trash-can{
+    margin-top: 10px;
+}

@@ -1,31 +1,37 @@
+import '../locations/locations.css';
 
 export default function Locations(){
     return(
-        <div id="locations" className="py-16 bg-gray-50">
-            <div className='max-w-4xl mx-auto px-6 text-center'>
-                <h2 className="text-4xl font bold text-gray-800 md-10 border-b-4 border-pink-500 inline-block">
+        <div id="locations" className="py-16 bg-blue-200">
+            <h2 className="title text-4xl flex justify-center font bold text-gray-800 md-10 bg-gray-50 border-b-4 border-pink-500">
                     Our Locations
                 </h2>
-            <div className='grid md:gridcols-2 gap-8 mt-10 text-left'>
-                <div className='p-6 bg-white rounded-2xl shadow hover:shadow-lg transition'>
-                    <h3 className="text-2xl font font-semibold text-pink-600 mb-3">Kamurocho</h3>
-                    <ul className="list-disc pl-5 text gray-700 space-y-1">
+                <div className='locations-names  flex row justify-center flex-wrap'>
+                    <div className='location-city flex flex-col justify-center items-center border-2 border-pink-500 rounded-2xl bg-blue-50'>
+                    <h2 className='city-name text-4xl font-alumni'>
+                        Kamurocho
+                    </h2>
+                    <img className='rounded-2xl' src='Images/location_kamurocho.jpg' width={400}></img>
+                    <ul className='text-2xl'>
                         <li>Tenkaichi Street</li>
                         <li>West Shichifuku Street</li>
                     </ul>
+                    </div>
+                    <div className="location-city flex flex-col border-2 justify-center items-center border-pink-500 rounded-2xl bg-blue-50">
+                    <h2 className='city-name text-4xl'>
+                        Sotenbori
+                    </h2>
+                    <img className='rounded-2xl' src='Images/location_sotenbori.jpg' width={400}></img>
+                    <ul className='text-2xl'>
+                        <li>Tsurukame Highway</li>
+                        <li>Sotenbori Footpath</li>
+                    </ul>
+                    </div>
                 </div>
 
-               <div className='p-6 bg-white rounded-2xl shadow hover:shadow-lg transition'>
-                <h3 className='text-2xl font-semibold text-pink-600 mb-3'>Sotenbori</h3>
-                <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                    <li>Tsurukame Highway</li>
-                    <li>Sotenbori Footpath</li>
-                </ul>
-                </div> 
-
-            </div>
             </div>
             
-        </div>
+            
+        
     )
 }

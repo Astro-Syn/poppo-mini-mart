@@ -48,7 +48,7 @@ export default function Reviews(){
                             </div>
 
                             <p>{review.description}</p>
-                            <h2>{review.customer}</h2>
+                            <h2 className='customer-name'>{review.customer}</h2>
                         </div>
                         <div className="flex-end">
                             <img 

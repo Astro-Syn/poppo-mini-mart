@@ -3,6 +3,7 @@ import { useState, useEffect} from 'react';
 import { useCart } from '../context/CartContext';
 import "../styles/MenuItems.css";
 import "../food/Food.css";
+import { motion } from 'framer-motion';
 
 type Foods = {
     id: number;
@@ -36,9 +37,14 @@ useEffect(() => {
           const cartItem = cart.find((item) => item.id === food.id && item.category === 'food')
     
           return(
-                <div key={food.id} className='display-items'>
+                <motion.div key={food.id} 
+                className='display-items'
+                initial={{opacity: 0, y: 40}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.5}}
+                >
                 <img src={food.image} alt={food.title} width={200} />
-                <h2>{food.title}</h2>
+                <h2 className='product-name'>{food.title}</h2>
                 <p>{food.price}¥</p>
                 <p>{food.description}</p>
 
@@ -68,7 +74,7 @@ useEffect(() => {
                   Add to Cart
                 </button>
               )}
-          </div>
+          </motion.div>
 
           
         );

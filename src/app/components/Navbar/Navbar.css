@@ -13,6 +13,7 @@
     height: 120px;
     display: flex;
     align-items: center;
+    margin-left: 2px;   
 }
 
 .logo{
@@ -22,7 +23,8 @@
     align-items: flex-start;
     max-width: 100px;
     min-width: 100px;
-    margin: 10px;
+    margin:  auto;
+    cursor: pointer;
 
 }
 
@@ -198,3 +200,4 @@
     50% { transform: scale(1.2);}
     100% { transform: scale(1);}
 }
+

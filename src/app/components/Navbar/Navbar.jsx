@@ -7,10 +7,13 @@ export const Navbar = () => {
         <>
         <nav className="navbar">
             
+
+            <Link href='/' className='logo'>
                 <div className="logo">
                     <img src="Images/poppo_logo.jpg" alt="poppo logo"></img>
-                    
                 </div>
+            </Link>
+                
             
             <div className='navbar-pattern'>
                 <div className="block">
