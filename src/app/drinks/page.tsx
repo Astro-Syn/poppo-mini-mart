@@ -42,7 +42,7 @@ export default function Drinks(){
                         >
                         <img src={drink.image} alt={drink.title} width={200} />
                         <h2 className='product-name'>{drink.title}</h2>
-                        <p>{drink.price}¥</p>
+                        <p className='text-pink-600 flex justify-center font-medium'>{drink.price}¥</p>
                         <p>{drink.description}</p>
 
                         {cartItem ? (

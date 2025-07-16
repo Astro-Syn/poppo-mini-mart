@@ -1,0 +1,17 @@
+.poppo-logo{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .hero-image{
+        display: none;
+    }
+    .poppo-logo{
+        display: block;
+        margin: 5%;
+    }
+
+    .poppo-logo img{
+        border-radius: 10px;
+    }
+}

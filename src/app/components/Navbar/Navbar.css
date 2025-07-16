@@ -82,8 +82,12 @@
 .menu-text{
     display: flex;
     justify-content: center;
-    gap: 15%;
+    gap: 17%;
     margin: 15px;
+    font-family: alumni sans, thaoma;
+    font-size: 1.5em;
+    letter-spacing: 0.5px;
+
 }
 
 .menu-item{
@@ -201,3 +205,53 @@
     100% { transform: scale(1);}
 }
 
+.ham-nav{
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .menu-text {
+        gap: 10%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .menu-text{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+    .navbar-pattern{
+        display: none;
+    }
+    .ham-nav{
+        display:block;
+        z-index: 10;
+        margin-bottom: 10px;
+    }
+
+    .nav-dropdown{
+        top: 40px;
+        margin-top: 0;
+        padding: 2%;
+        
+    }
+    .nav-dropdown ul li{
+        padding: 20px 20px;
+        font-family: alumni sans, thaoma;
+        font-size: 2em;
+        transition: 0.2s ease-in;
+    }
+
+    .nav-dropdown ul li:hover{
+        color: aqua;
+    }
+}

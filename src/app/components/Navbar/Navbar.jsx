@@ -1,13 +1,19 @@
+'use client'
 import Link from "next/link";
 import "./Navbar.css";
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
 
 
 export const Navbar = () => {
+
+        const [openMenu, setopenMenu] = useState(false);
+
     return (
         <>
-        <nav className="navbar">
+        <nav className="navbar hidden md:flex ">
             
-
+            
             <Link href='/' className='logo'>
                 <div className="logo">
                     <img src="Images/poppo_logo.jpg" alt="poppo logo"></img>
@@ -77,9 +83,32 @@ export const Navbar = () => {
                 </Link>
                 
                 
-            
-            
         </nav>
+                    {/*Hamburger menu */}
+            <nav className='ham-nav h-10 bg-pink-600 w-full'>
+                
+                <button
+                className='md:hidden text-2xl'
+                onClick={() => setopenMenu(!openMenu)}
+                >
+                {openMenu ? <FaTimes className='text-cyan-100 text-4xl cursor-pointer'/> : <FaBars className='text-cyan-100 cursor-pointer text-4xl' />}
+                </button>
+
+                {openMenu && (
+                    <div className="nav-dropdown absolute w-1/4 h-2/3 bg-pink-600 z-10 rounded-br-3xl">
+                        <ul>
+                        <li><Link href='/'>Home</Link></li>
+                        <li><Link href='/food' onClick={() => setopenMenu(false)}>Food</Link></li>
+                        <li><Link href='/drinks' onClick={() => setopenMenu(false)}>Drinks</Link></li>
+                        <li><Link href='/healing' onClick={() => setopenMenu(false)}>Stimulants</Link></li>
+                        <li><Link href='/reviews' onClick={() => setopenMenu(false)}>Reviews</Link></li>
+                    </ul>
+                    </div>
+                    
+                )}
+            </nav>
+                
+
         </>
     )
 }

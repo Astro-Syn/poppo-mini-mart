@@ -42,7 +42,7 @@ export default function Reviews(){
                                     <img
                                     key={index}
                                     src={star}
-                                    className='w-5 h-5 mr-1 p-1.5'
+                                    className='w-8 h-8 mr-4 p-1.5'
                                     />
                                 ))}
                             </div>

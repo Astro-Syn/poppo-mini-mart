@@ -45,7 +45,7 @@ useEffect(() => {
                 >
                 <img src={food.image} alt={food.title} width={200} />
                 <h2 className='product-name'>{food.title}</h2>
-                <p>{food.price}¥</p>
+                <p className='text-pink-600 flex justify-center font-medium'>{food.price}¥</p>
                 <p>{food.description}</p>
 
              

@@ -40,7 +40,7 @@ export default function Stimulants(){
                 >
                 <img src={stimulant.image} alt={stimulant.title} width={200} />
                 <h2 className='product-name'>{stimulant.title}</h2>
-                <p>{stimulant.price}¥</p>
+                <p className='text-pink-600 flex justify-center font-medium'>{stimulant.price}¥</p>
                 <p>{stimulant.description}</p>
 
               {cartItem ? (
