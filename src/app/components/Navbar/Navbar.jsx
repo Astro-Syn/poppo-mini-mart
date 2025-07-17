@@ -85,13 +85,18 @@ export const Navbar = () => {
                 
         </nav>
                     {/*Hamburger menu */}
-            <nav className='ham-nav h-10 bg-pink-600 w-full'>
+            <nav className='ham-nav h-25 bg-pink-600 w-full'>
+                <Link href='/checkout' className="cart">
                 
+                <img src='/Images/shopping_cart.png' alt="Checkout" ></img>
+                
+                </Link>
+
                 <button
                 className='md:hidden text-2xl'
                 onClick={() => setopenMenu(!openMenu)}
                 >
-                {openMenu ? <FaTimes className='text-cyan-100 text-4xl cursor-pointer'/> : <FaBars className='text-cyan-100 cursor-pointer text-4xl' />}
+                {openMenu ? <FaTimes className='h-menu-btn text-cyan-100 text-6xl cursor-pointer'/> : <FaBars className='h-menu-btn text-cyan-100 cursor-pointer text-6xl' />}
                 </button>
 
                 {openMenu && (

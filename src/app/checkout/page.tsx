@@ -36,12 +36,15 @@ export default function CheckoutPage() {
                 
                 {/* Quantity Buttons */}
                 <div className='quantity'>
-                    <button 
+                    <button
+                    className='checkout-btn' 
                     onClick={() => updateQuantity(item.id, item.quantity - 1, item.category)}>
                         -
                     </button>
                     <span>{item.quantity}</span>
-                    <button onClick={() => updateQuantity(item.id, item.quantity + 1, item.category)}>+</button>
+                    <button
+                    className='checkout-btn'
+                    onClick={() => updateQuantity(item.id, item.quantity + 1, item.category)}>+</button>
                 </div>
                 
               

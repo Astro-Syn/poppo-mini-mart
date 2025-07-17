@@ -54,7 +54,6 @@
     margin-right: 10px;    
 }
 
-
 .total-price{
     display: flex;
     justify-content: flex-end;
@@ -79,7 +78,7 @@
 }
 
 
-button{
+.checkout-btn{
     border: 1px solid pink;
     margin: 10px;
     padding: 10px;
@@ -91,11 +90,11 @@ button{
     transition: background 0.3s ease-in, transform 0.1s ease-in;
 }
 
-button:hover{
+.checkout-button:hover{
     background: linear-gradient(rgb(203, 42, 98), var(--main-pink));
 }
 
-button:active{
+.checkout-button:active{
     transform: translateY(1px);
     background: linear-gradient(rgb(254, 189, 212), rgb(255, 119, 185));
 }
