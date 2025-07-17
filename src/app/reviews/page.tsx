@@ -5,7 +5,7 @@ import '../reviews/Reviews.css';
 
 type Reviews = {
     id: number;
-    rating: string;
+    rating: string[];
     description: string;
     customer: string;
     image: string;
