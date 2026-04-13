@@ -1,6 +1,6 @@
 'use client'
 import {useState, useEffect} from 'react';
-import '../reviews/Reviews.css';
+import './Reviews.css';
 
 
 type Reviews = {
@@ -26,7 +26,7 @@ export default function Reviews(){
 
     return (
         <div>
-            <h1 className='title'>Customer Reviews</h1>
+            <h1 className='title mt-1'>Customer Reviews</h1>
             <div className='reviews flex justify-center flex-col items-center px-4'>
                 {reviews.map((review) => {
                     return (

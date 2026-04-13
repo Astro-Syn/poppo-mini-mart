@@ -2,12 +2,32 @@
 import Link from "next/link";
 import "./Navbar.css";
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 
 export const Navbar = () => {
 
         const [openMenu, setopenMenu] = useState(false);
+        const menuRef = useRef(null);
+
+       useEffect(() => {
+    const handleClickOutside = (event) => {
+        if (
+            openMenu &&
+            menuRef.current &&
+            !menuRef.current.contains(event.target)
+        ) {
+            setopenMenu(false);
+        }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+    };
+}, [openMenu]);
+
 
     return (
         <>
@@ -22,6 +42,26 @@ export const Navbar = () => {
                 
             
             <div className='navbar-pattern'>
+                <div className="block">
+                    <div className='pink'></div>
+                    <div className='yellow'></div>
+                </div>
+                <div className="block">
+                    <div className='pink'></div>
+                    <div className='yellow'></div>
+                </div>
+                <div className="block">
+                    <div className='pink'></div>
+                    <div className='yellow'></div>
+                </div>
+                <div className="block">
+                    <div className='pink'></div>
+                    <div className='yellow'></div>
+                </div>
+                <div className="block">
+                    <div className='pink'></div>
+                    <div className='yellow'></div>
+                </div>
                 <div className="block">
                     <div className='pink'></div>
                     <div className='yellow'></div>
@@ -92,6 +132,10 @@ export const Navbar = () => {
                 
                 </Link>
 
+
+                <div ref={menuRef}>
+
+                
                 <button
                 className='md:hidden text-2xl'
                 onClick={() => setopenMenu(!openMenu)}
@@ -100,7 +144,9 @@ export const Navbar = () => {
                 </button>
 
                 {openMenu && (
-                    <div className="nav-dropdown absolute w-1/4 h-2/3 bg-pink-600 z-10 rounded-br-3xl">
+                    
+                    <div className="nav-dropdown flex justify-center align-center absolute w-1/2 h-full bg-pink-600 z-10 rounded-br-2xl">
+                        
                         <ul>
                         <li><Link href='/'>Home</Link></li>
                         <li><Link href='/food' onClick={() => setopenMenu(false)}>Food</Link></li>
@@ -111,6 +157,7 @@ export const Navbar = () => {
                     </div>
                     
                 )}
+                </div>
             </nav>
                 
 
